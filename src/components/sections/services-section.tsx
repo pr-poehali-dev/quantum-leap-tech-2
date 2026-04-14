@@ -10,37 +10,47 @@ export function ServicesSection() {
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-10 transition-all duration-700 md:mb-14 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Характеристики
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Полные технические данные</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-10 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Дисплей",
+              description: "LCD 2448×2448 пикс. на каждый глаз · 90 Гц · угол обзора 120° · IPD 57–72 мм",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Производительность",
+              description: "Snapdragon XR2 · RAM 8 ГБ · Хранилище 128 ГБ · Wi-Fi 6 · Bluetooth 5.0",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "Отслеживание",
+              description: "Inside-out 6DoF · 4 камеры · Eye-tracking встроенный · Обнаружение рук без контроллеров",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Питание и вес",
+              description: "Аккумулятор 26,6 Вт·ч · до 2 часов (снимаемый, быстрая замена) · вес 785 г",
               direction: "bottom",
+            },
+            {
+              title: "Контроллеры",
+              description: "6DoF · время работы 15+ часов · зарядка USB-C · защита от ударов · ремень на запястье",
+              direction: "top",
+            },
+            {
+              title: "Подключение",
+              description: "USB-C 3.2 · Wi-Fi 6 (802.11ax) · Bluetooth 5.0 · Vive Streaming PC (DisplayPort через кабель)",
+              direction: "right",
             },
           ].map((service, i) => (
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
@@ -82,14 +92,14 @@ function ServiceCard({
     <div
       className={`group transition-all duration-700 ${getRevealClass()}`}
       style={{
-        transitionDelay: `${index * 150}ms`,
+        transitionDelay: `${index * 120}ms`,
       }}
     >
       <div className="mb-3 flex items-center gap-3">
         <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
         <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
       </div>
-      <h3 className="mb-2 font-sans text-2xl font-light text-foreground md:text-3xl">{service.title}</h3>
+      <h3 className="mb-2 font-sans text-xl font-light text-foreground md:text-2xl">{service.title}</h3>
       <p className="max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">{service.description}</p>
     </div>
   )
